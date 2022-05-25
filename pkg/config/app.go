@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	dub *gorm.DB
+	db *gorm.DB
 )
 
 func Connect() {
@@ -14,12 +14,12 @@ func Connect() {
 
 	mysql.Open(dsn)
 	d, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	if err != nill {
+	if err != nil {
 		panic(err)
 	}
 	db = d
 }
-func GgtDB() *gorm.DB {
+func GetDB() *gorm.DB {
 	return db
 
 }
