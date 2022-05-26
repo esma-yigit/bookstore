@@ -10,7 +10,7 @@ var (
 )
 
 func Connect() {
-	dsn := "root@tcp(127.0.0.1:3306)"
+	dsn := "root@tcp(127.0.0.1:3306)/mysql"
 
 	mysql.Open(dsn)
 	d, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
